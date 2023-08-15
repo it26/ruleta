@@ -8,7 +8,5 @@ class ApuestaPorColor(Apuesta):
         self.color = color
 
     def ejecutarResultado(self, numeroDeLaRonda):
-        if(self.salioCero(numeroDeLaRonda)):
-            return
         if (numeroDeLaRonda.color == self.color):
             self.jugador.sumarSaldo(self.dineroApostado*2)

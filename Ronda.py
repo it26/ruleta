@@ -1,5 +1,5 @@
 import random
-from Numero import Numero
+from NumeroDeRuleta import NumeroDeRuleta
 
 class Ronda:
 
@@ -11,7 +11,7 @@ class Ronda:
         self.apuestas.append(apuesta)
 
     def ejecutar(self):
-        self.numero = Numero(random.randint(0, 36))
+        self.numero = NumeroDeRuleta(random.randint(0, 36))
         print("El numero que salio es:" + str(self.numero.valor))
         for apuesta in self.apuestas:
             apuesta.ejecutarResultado(self.numero)
