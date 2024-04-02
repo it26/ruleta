@@ -12,6 +12,6 @@ class Ronda:
 
     def ejecutar(self):
         self.numero = NumeroDeRuleta(random.randint(0, 36))
-        print("El numero que salio es:" + str(self.numero.valor))
+        #print("El numero que salio es:" + str(self.numero.valor))
         for apuesta in self.apuestas:
             apuesta.ejecutarResultado(self.numero)

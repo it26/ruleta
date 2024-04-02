@@ -3,10 +3,10 @@ class NumeroDeRuleta:
     COLOR_ROJO = 'rojo'
     COLOR_NEGRO = 'negro'
     COLORES = [COLOR_ROJO, COLOR_NEGRO]
-    PRIMER_DECENA = 'primera'
-    SEGUNDA_DECENA = 'segunda'
-    TERCERA_DECENA = 'tercera'
-    DECENAS = [PRIMER_DECENA, SEGUNDA_DECENA, TERCERA_DECENA]
+    PRIMER_DOCENA = 'primera'
+    SEGUNDA_DOCENA = 'segunda'
+    TERCERA_DOCENA = 'tercera'
+    DOCENAS = [PRIMER_DOCENA, SEGUNDA_DOCENA, TERCERA_DOCENA]
     PRIMERA_COLUMNA = 'primera'
     SEGUNDA_COLUMNA = 'segunda'
     TERCERA_COLUMNA = 'tercera'
@@ -15,11 +15,12 @@ class NumeroDeRuleta:
     MENOR = 'menor'
     PAR = 'par'
     IMPAR = 'impar'
+    NUMEROS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
 
     def __init__(self, valor):
         self.valor = valor
         self.color = self.obtenerColor()
-        self.decena = self.obtenerDecena()
+        self.docena = self.obtenerDocena()
         self.columna = self.obtenerColumna()
         self.esMayor = True if self.obtenerMayorMenor() == self.MAYOR else False
         self.esMenor = True if self.obtenerMayorMenor() == self.MENOR else False
@@ -40,16 +41,16 @@ class NumeroDeRuleta:
             return self.COLOR_ROJO
         return self.COLOR_NEGRO
 
-    def obtenerDecena(self):
+    def obtenerDocena(self):
         if(self.salioCero()):
             return None
-        primeraDecena = range(1, 13)
-        segundaDecena = range(13, 25)
-        if self.valor in primeraDecena:
-            return self.PRIMER_DECENA
-        if self.valor in segundaDecena:
-            return self.SEGUNDA_DECENA
-        return self.TERCERA_DECENA
+        primeraDocena = range(1, 13)
+        segundaDocena = range(13, 25)
+        if self.valor in primeraDocena:
+            return self.PRIMER_DOCENA
+        if self.valor in segundaDocena:
+            return self.SEGUNDA_DOCENA
+        return self.TERCERA_DOCENA
 
     def obtenerColumna(self):
         if(self.salioCero()):
